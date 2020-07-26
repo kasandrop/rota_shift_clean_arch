@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Marcin Wasilewski on 11/07/20 06:11
+  ~  * Copyright (c) 2020 . All rights reserved.
+  ~  * Last modified 09/07/20 15:42
+  ~  */
+  -->
+
+<!-- Modify this file to customize your launch splash screen -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/white" />
+
+    <!-- You can insert your own image assets here -->
+
+
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@mipmap/splash3" />
+    </item>
+</layer-list>

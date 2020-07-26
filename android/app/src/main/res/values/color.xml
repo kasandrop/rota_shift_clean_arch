@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * Created by Marcin Wasilewski on 11/07/20 06:11
+  ~  * Copyright (c) 2020 . All rights reserved.
+  ~  * Last modified 09/07/20 15:28
+  ~  */
+  -->
+
+<resources>
+    <color name="colorPrimary">#006837</color>
+    <color name="colorPrimaryDark">#004012</color>
+    <color name="colorAccent">#c75f00</color>
+</resources>
