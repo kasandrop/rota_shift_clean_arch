@@ -26,8 +26,7 @@ const String SERVER_FAILURE_MESSAGE = 'Server Failure';
 const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
 const String NO_INTERNET_FAILURE_MESSAGE = 'No Internet connection';
 const String NO_DATA_SERVER_FAILURE_MESSAGE = 'No data provided yet';
-const String NO_DATA_CACHE_FAILURE_MESSAGE =
-    'Rota or Year was not saved last time '
+const String NO_DATA_CACHE_FAILURE_MESSAGE = 'Rota or Year was not saved last time '
     'or configuration didn\'t run properly';
 
 class HolidaysPage extends StatelessWidget {
@@ -66,9 +65,7 @@ class HolidaysPage extends StatelessWidget {
         builder: (BuildContext context, state) {
           int year = state.year.isValid() ? state.year.getOrCrash() : null;
 
-          return year != null
-              ? Text('Holidays $year - ${year + 1}')
-              : Container();
+          return year != null ? Text('Holidays $year - ${year + 1}') : Container();
         },
       ), leading: BlocBuilder<HolidaysBloc, HolidaysState>(
         builder: (BuildContext context, state) {
@@ -103,24 +100,21 @@ class HolidaysPage extends StatelessWidget {
             );
           },
           builder: (context, state) {
-            var daysOff = state.daysOffOption.fold(
-                () => <DateTime, List<DayOff>>{},
+            var daysOff = state.daysOffOption.fold(() => <DateTime, List<DayOff>>{},
                 (a) => a.fold((l) => <DateTime, List<DayOff>>{}, (r) => r));
 
-            final holidays = state.holidaysOption.fold(
-                () => <DateTime, List<Holiday>>{},
+            final holidays = state.holidaysOption.fold(() => <DateTime, List<Holiday>>{},
                 (a) => a.fold((l) => <DateTime, List<Holiday>>{}, (r) => r));
 
-            final List<Holiday> hols =
-                SplayTreeMap<DateTime, List<Holiday>>.from(
-                        holidays,
-                        (DateTime a, DateTime b) => b
-                            .toUtc()
-                            .millisecondsSinceEpoch
-                            .compareTo(a.toUtc().millisecondsSinceEpoch))
-                    .values
-                    .map((List<Holiday> e) => e.first)
-                    .toList();
+            final List<Holiday> hols = SplayTreeMap<DateTime, List<Holiday>>.from(
+                    holidays,
+                    (DateTime a, DateTime b) => b
+                        .toUtc()
+                        .millisecondsSinceEpoch
+                        .compareTo(a.toUtc().millisecondsSinceEpoch))
+                .values
+                .map((List<Holiday> e) => e.first)
+                .toList();
             int sumOfHours = 0;
             return Column(
               children: <Widget>[
@@ -130,27 +124,26 @@ class HolidaysPage extends StatelessWidget {
                     holidays: holidays,
                     year: state.year.getOrCrash(),
                     rota: state.rota.getOrCrash(),
-                    onDayLongPressed:
-                        (DateTime dateTime, List<dynamic> events) {
+                    onDayLongPressed: (DateTime dateTime, List<dynamic> events) {
                       getLogger('HolidaysPage').d(
                         'onDayLongPressed',
                       );
                       int epochTime = dateTime.toUtc().millisecondsSinceEpoch;
-                      BlocProvider.of<HolidaysBloc>(context).add(
-                          HolidaysEvent.addDeleteHoliday(
-                              holidayDay: epochTime));
+                      BlocProvider.of<HolidaysBloc>(context)
+                          .add(HolidaysEvent.addDeleteHoliday(holidayDay: epochTime));
                     }
                     //   onCalendarDayClick: myCalendarDayClick,
                     ),
                 Expanded(
                   child: ListView.separated(
+                    addAutomaticKeepAlives: false,
                     physics: BouncingScrollPhysics(),
                     itemCount: hols.length,
                     itemBuilder: (context, index) {
                       sumOfHours += hols[index].hours;
-                      DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(
-                              hols[index].epochTimeStamp)
-                          .toUtc();
+                      DateTime dateTime =
+                          DateTime.fromMillisecondsSinceEpoch(hols[index].epochTimeStamp)
+                              .toUtc();
                       return ListTile(
                         contentPadding: EdgeInsets.symmetric(
                           vertical: 0.0,
@@ -174,7 +167,7 @@ class HolidaysPage extends StatelessWidget {
                         title: Text('${hols[index].hours} h. of holidays',
                             style: Theme.of(context).textTheme.subtitle1),
                         subtitle: Text(
-                          'lorem ipsum polerum',
+                          '',
                           style: Theme.of(context).textTheme.caption,
                         ),
                         trailing: Text(
@@ -219,14 +212,13 @@ class HolidaysPage extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return SimpleDialog(
-          title: const Text('Select assignment'),
+          title: const Text('Select number of hours'),
           children: <Widget>[
             ChoiceChipWidget(
               chipsNumber: 8,
               textForLabelWidget: (int index) => Text("${index + 1}h"),
               selectedLogic: (int index) => hour == (index + 1) ? true : false,
-              dispatcher: (BuildContext context, int i) =>
-                  Navigator.pop(context, i + 1),
+              dispatcher: (BuildContext context, int i) => Navigator.pop(context, i + 1),
             ),
           ],
         );

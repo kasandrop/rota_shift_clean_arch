@@ -58,17 +58,18 @@ dependencies:
   freezed_annotation: ^0.7.1
   sembast: ^2.4.4+1
   flushbar: ^1.10.4
-
-
-dev_dependencies:
-
-  flutter_test:
-    sdk: flutter
   lint: ^1.2.0
   mockito: ^4.1.1
   build_runner: ^1.10.0
   freezed: ^0.10.8
   json_serializable: ^3.3.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
 
 
 # For information on the generic Dart part of this file, see the
