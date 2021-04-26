@@ -1,5 +1,10 @@
 # rotashiftcleanarch
 
+Screenshots of Rota Calendar.
+In my ex work place staff worked according to the rolling rota.There were 7 rotas. Basically we worked 5 days in a row and after that we had 2 days off.But there were exception to the mentioned rule because  every 4 weeks we could work 6 times in a row or we could have 3 days off instead of 2.
+The environment I work required to have the balanced rota so the business could run smoothly. That is why difrent rota have diffrent days off.
+The application show
+
 calendar rota
 <table >
   <tr>
@@ -21,3 +26,17 @@ calendar rota
 <td><img src="https://user-images.githubusercontent.com/20933329/116014986-a19c9780-a62f-11eb-86b2-f045bbcf4db7.jpg"/></td>
 </tr>
 </table>
+
+
+In my ex work place staff worked according to the rolling rota. There were 7 rotas. Basically we worked 5 days in a row and after that we had 2 days off. .But there were exceptions to the mentioned rule because  every 4 weeks we could work 6 times in a row or we could have 3 days off instead of 2.
+
+The environment I work  for required to have the balanced rota so the business could run smoothly. That is why different rota have different days off. Staff knew their rotas for the whole year in advance so we could easily plan holidays for example..
+
+The goal of the app is to show days off for different rotas and different years. Also user of the app can mark on the calendar their taken and future holidays. It is possible to change the standard 8h of taken holidays to 2 h . It used to be quite popular among the staff to shorten their working day.
+
+Development of the app. The technical words.
+The main reason of writing it was to gain some experience in the   software development process.
+The app is written in dart and Flutter framework is used. The  google cross platform 
+development kit. The version of framework was <2.0 so the null safety feature is not used.
+
+I put lots of attention to software architecture. The modules: domain,application,infrastructure, presentation
