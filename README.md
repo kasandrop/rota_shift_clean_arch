@@ -35,7 +35,7 @@ screenshots of Rotaholic
 
 The goal of the app is to show days off for different rotas and different years. Also user of the app can mark on the calendar their taken and future holidays. It is possible to change the standard 8h of taken holidays to 2 h . It used to be quite popular among the staff to shorten their working day.
 
-Development of the app. The technical words.
+<b>Development of the app. The technical words.</b>
 The main reason of writing it was to gain some experience in the   software development process.
 The app is written in dart and Flutter framework is used. The  google cross platform 
 development kit. The version of framework was <2.0 so the null safety feature is not used.
