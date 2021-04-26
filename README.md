@@ -35,10 +35,11 @@ screenshots of Rotaholic
 
 The goal of the app is to show days off for different rotas and different years. Also user of the app can mark on the calendar their taken and future holidays. It is possible to change the standard 8h of taken holidays to 2 h . It used to be quite popular among the staff to shorten their working day.
 
-<b>Development of the app. The technical words.</b>
+| <b>Development of the app. The technical words.</b>
+
 The main reason of writing it was to gain some experience in the   software development process.
 The app is written in dart and Flutter framework is used. The  google cross platform 
-development kit. The version of framework was <2.0 so the null safety feature is not used.
+development kit. The version of the Flutter framework I used is <2.0 so the null safety feature is not used.
 
 I put lots of attention to software architecture. I  tried to structure the code in the way  to follow the domain driven design.
 The written software is divided into modules<packages>  in order to achieve the visual separation of these layers. 
@@ -49,6 +50,5 @@ The role of  the repositories is to cache the data , retrieve the data  . They t
 
 Data source's api can be fit into repositories / using adapter design pattern/ 
 
-I use BLOC as    a  state management .User by interaction with ui emits the events. These  flow to Bloc which answers on events by calling the use cases and  streaming states .That causes ui to refresh. Under the  hood the Observer pattern is used   when  blocBuilder widget responds to ui state change. It is very important that this ui level is not polluted with direct calls to databases or  with  other objects which don't belong to the layer.
-So we avoid the spaghetti code and maintenance nightmare. 
+I use BLOC as    a  state management .User by interaction with ui emits the events. These  flow to Bloc which answers on events by calling the use cases and  streaming states .That causes ui to refresh. Under the  hood the Observer pattern is used   when  blocBuilder widget responds to ui state changes. It is very important that this ui level is not polluted with direct calls to databases or  with  other objects which don't belong to the layer.That is why presentation layer is not hard coupled with other domains.I avoid this spaghetti code and maintenance nightmare with the help of the BLOC-state management technique.
 
