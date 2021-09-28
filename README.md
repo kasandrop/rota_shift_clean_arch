@@ -2,7 +2,7 @@
  
 In my ex work place staff worked according to the rolling rota.There were 7 rotas. Basically we worked 5 days in a row and after that we had 2 days off.But there were exception to the mentioned rule because  every 4 weeks we could work 6 times in a row or we could have 3 days off instead of 2.
 
-The environment I work  for required to have the balanced rota so the business could run smoothly. That is why difrent rota have diffrent days off.The environment I work  for required to have the balanced rota so the business could run smoothly.
+The environment I work  for required to have the balanced rota so the business could run smoothly.
 That is why different rotas have different days off. Staff knew their rotas for the whole year in advance so we could easily plan holidays for example..
 
 
