@@ -51,4 +51,7 @@ The role of  the repositories is to cache the data , retrieve the data  . They t
 Data source's api can be fit into repositories / using adapter design pattern/ 
 
 I use BLOC as    a  state management .User by interaction with ui emits the events. These  flow to Bloc which answers on events by calling the use cases and  streaming states .That causes ui to refresh. Under the  hood the Observer pattern is used   when  blocBuilder widget responds to ui state changes. It is very important that this ui level is not polluted with direct calls to databases or  with  other objects which don't belong to the layer.That is why presentation layer is not hard coupled with other domains.I avoid this spaghetti code and maintenance nightmare with the help of the BLOC-state management technique.
+ 
+ I would like to point out on the visuals here. Flutter uses Material Design to nicely show interaction between the user and the app. 
+ The developer has only to choose the main (primary) color of the app. Material Widgets are already preprogrammed how to graphically represent data  on the screen, how to show interactive elements on the screen.
 
